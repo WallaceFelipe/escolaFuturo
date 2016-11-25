@@ -2,7 +2,7 @@
 
 class Turma extends CI_Model {
     public $idturma;
-    public $diciplina_codigo;
+    public $disciplina_codigo;
     public $professor_idprofessor;
     public $horario;
     public $alunoList;
@@ -27,7 +27,7 @@ class Turma extends CI_Model {
 
             // Monta o objeto turma
             $this->idturma = $result->idturma;
-            $this->diciplina_codigo = $result->diciplina_codigo;
+            $this->disciplina_codigo = $result->disciplina_codigo;
             $this->professor_idprofessor = $result->professor_idprofessor;
             $this->horario = $result->horario;
             $this->alunoList = $result->alunoList;
@@ -87,7 +87,7 @@ class Turma extends CI_Model {
         foreach ($result as $turma) {
             $tmp    = new Turma();
             $tmp->idturma = $turma->idturma;
-            $tmp->diciplina_codigo = $turma->diciplina_codigo;
+            $tmp->disciplina_codigo = $turma->disciplina_codigo;
             $tmp->professor_idprofessor = $turma->professor_idprofessor;
             $tmp->horario = $turma->horario;
             $tmp->alunoList = $turma->alunoList;
