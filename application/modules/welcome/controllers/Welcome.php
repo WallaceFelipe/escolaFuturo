@@ -24,7 +24,7 @@ class Welcome extends CI_Controller {
   $this->load->helper('url');
 
   // Create a URL
-  $url = base_url() . 'livros';
+  $url = base_url() . 'turmas';
 
   // Redirect user
   redirect($url);

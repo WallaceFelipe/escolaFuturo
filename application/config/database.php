@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
-	'username' => 'leticia_guedes',
-	'password' => '',
-	'database' => 'orgab_db',
+	'hostname' => 'localhost',
+	'username' => 'leticia',
+	'password' => 'leehmysql',
+	'database' => 'escolafuturo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
