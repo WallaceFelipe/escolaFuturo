@@ -20,13 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-  // Load URL Helpers
-  $this->load->helper('url');
-
-  // Create a URL
-  $url = base_url() . 'turmas';
-
-  // Redirect user
-  redirect($url);
+		$this->load->view('welcome_message');
 	}
 }
