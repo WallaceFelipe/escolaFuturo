@@ -48,11 +48,11 @@ class Disciplina extends CI_Model {
         //  @ verifico se o atributo "iddisciplina" existe neste objeto.
         //    lembrando que este atributo é apagado se criamos uma nova disciplina.
         if ( isset($this->iddisciplina) ) {
-             $this->db->update('disciplinas', $this, array('iddisciplina' => $this->iddisciplina));
+             $this->db->update('disciplina', $this, array('iddisciplina' => $this->iddisciplina));
         }
         // Salva
         else {
-            $this->db->insert('disciplinas', $this);
+            $this->db->insert('disciplina', $this);
         }
     }
 
@@ -61,35 +61,6 @@ class Disciplina extends CI_Model {
     */
     public function delete () {
         $this->db->delete('disciplinas', array('iddisciplina' => $this->iddisciplina));
-    }
-
-    /*
-        Obtém uma lista de todas as disciplinas
-    */
-    public static function getDisciplinas () {
-        // Obtém instância do CodeIgniter
-        $CI =& get_instance();
-
-        // Carregando biblioteca do banco de dados
-        $CI->load->database();
-
-        // Obtém todos os posts
-        $CI->db->order_by("iddisciplina", "cresc");
-        $result = $CI->db->get('disciplinas')->result();
-
-        // Monta vetor de objetos "Disciplina"
-        $disciplinas  = [];
-
-        foreach ($result as $disciplina) {
-            $tmp    = new Disciplina();
-            $tmp->iddisciplina = $disciplina->iddisciplina;
-            $tmp->codigo = $disciplina->codigo;
-            $tmp->nome = $disciplina->nome;
-
-            $disciplinas[] = $tmp;
-        }
-
-        return $disciplinas;
     }
 
 }
